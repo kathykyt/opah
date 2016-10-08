@@ -1,0 +1,40 @@
+
+#if __cplusplus
+extern "C" {
+#endif
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <sys/ioctl.h>
+#include <fcntl.h>
+#include <time.h>
+#include <sys/poll.h>
+
+#include <android/log.h>
+
+char logBuff[1024];
+
+
+
+int nativeLog(const char * fmt, ...) 
+{
+   va_list ap;
+
+   va_start(ap, fmt);
+   //printf(fmt, ap);
+  // sprintf(logBuff, fmt, ap);
+   printf(fmt, ap);
+   //printf("%s", logBuff);
+  // __android_log_print(ANDROID_LOG_INFO, "starfish", "%s", logBuff);
+   __android_log_print(ANDROID_LOG_INFO, "starfish", fmt, ap);
+   va_end(ap);
+
+}
+
+//#if __cplusplus
+//};
+//#endif
