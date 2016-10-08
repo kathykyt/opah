@@ -12,9 +12,7 @@ class CtlRoot:public CtlObject
 	protected:
 
     public:
-		//daniel
-		//const char* lastInterface;
-		//const char* currentInterface;
+		
 		wifiMgr *wifiMan;
 		
 		int selectWifiID;
@@ -27,29 +25,16 @@ class CtlRoot:public CtlObject
 		int currentMode;//UImode for change interface
 		
 		int power;
-		int fskMode;
-		int interior_temperature_hope;
-		int interior_temperature;//interior_temperature
-		int floor_heating_temperature_hope;//floor_heating_temperature_hope
-		int floor_heating_temperature;
-		int water_temperature_hope;//water_temperature_hope
-		int water_temperature; //duke add
+	
 		int list_of_24_hour[24];
 		int last_24_hour;
-		int ontime;//ryze add
-		int offtime;//ryze add
-		List *list;//ryze add
-		int eco_mode;
-		int burning;
-		int errorCode;
-		int userWater;
-		int fskVersion; // duke add
-	
+		List *list;
+
 		bool wifi_icon;
 		bool reserve_icon;
 		bool ez_icon;
 		bool goout_icon;
-		//daniel ends
+		
 		class WidgetManage* pWidgetManage;
 		CtlRoot(int x, int y, int w, int h);
 		~CtlRoot(void);
@@ -68,7 +53,6 @@ class CtlRoot:public CtlObject
 		int conMgrSetCallback(int (*pCallback)(Event* pEvent));
 		int conMgrExecCallback(Event* pEvent);
 
-		//daniel
 		void setValue(int value);
 		int GetHWValue(void);
 		void SetHWValue(int value);
