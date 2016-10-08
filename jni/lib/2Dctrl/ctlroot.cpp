@@ -1,7 +1,6 @@
 #include "ctlroot.h"
 #include "widgetmanage.h"
 #include "draw.h"
-//#include "fsk.h"
 #include "wakelock.h"
 
 extern int delay_sleep_time_count;
@@ -19,32 +18,20 @@ CtlRoot::CtlRoot(int x, int y, int w, int h):CtlObject(x, y, w, h)
 	currentMode = 2;
 	settingValue = 0;
 	volume = 3;
-	//sensor temp init
-	interior_temperature = 24;
-	water_temperature_hope = 50;
-	floor_heating_temperature_hope = 60;
-	interior_temperature_hope = 26;
-	floor_heating_temperature = 55;
-	ontime = 30;//ryze add
-	offtime = 3;//ryze add
+
 	list = NULL;
 	for (int i = 0; i < 24; i++) {
 		list_of_24_hour[i] = 0;
 	}
-	last_24_hour = -1;
+	//last_24_hour = -1;
 	
 	wifi_icon = false;
-	reserve_icon = false;
-	ez_icon = false;
+	//reserve_icon = false;
+	//ez_icon = false;
 	goout_icon = false;
 	
 	power = 1;
-//	fskMode = AIR_HEATING_MODE;
-//	eco_mode = 0;
-//	burning = 0;
-//	errorCode = 0;
-//	userWater = 0;
-//	fskVersion = 12;
+
 }
 
 CtlRoot::~CtlRoot(void)
